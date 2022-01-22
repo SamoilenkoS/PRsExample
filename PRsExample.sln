@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PRsExample", "PRsExample\PRsExample.csproj", "{D5C23DF1-F9B2-4470-9E02-4A129DDF38B0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Circles", "Circles\Circles.csproj", "{B5EBA3FD-F9FE-4F3C-B81B-BBBEC816742C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{D5C23DF1-F9B2-4470-9E02-4A129DDF38B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5C23DF1-F9B2-4470-9E02-4A129DDF38B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5C23DF1-F9B2-4470-9E02-4A129DDF38B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5EBA3FD-F9FE-4F3C-B81B-BBBEC816742C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5EBA3FD-F9FE-4F3C-B81B-BBBEC816742C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5EBA3FD-F9FE-4F3C-B81B-BBBEC816742C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5EBA3FD-F9FE-4F3C-B81B-BBBEC816742C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
