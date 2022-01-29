@@ -20,7 +20,7 @@ namespace Circles
             Position = new Point { X = x, Y = y };
             XSpeed = random.GetRandom(5, 20);
             YSpeed = random.GetRandom(5, 20);
-            Size = random.GetRandom(20, 100);
+            Size = random.GetRandom(5, 25);
         }
 
         public void ReverseDirection()

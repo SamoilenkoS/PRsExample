@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -13,10 +14,14 @@ namespace Circles
     public partial class Form1 : Form
     {
         private BallContainer _ballContainer;
+        private IMove _move;
+        private DateTime _lastCheck;
         public Form1()
         {
             InitializeComponent();
-            _ballContainer = new BallContainer(pictureBox1.Width, pictureBox1.Height);
+            _lastCheck = DateTime.Now;
+            _move = new DefaultMove(pictureBox1.Width, pictureBox1.Height);
+            _ballContainer = new BallContainer();
         }
 
         private void trackBarRed_Scroll(object sender, EventArgs e)
@@ -61,21 +66,31 @@ namespace Circles
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            _ballContainer.Move();
+            _ballContainer.Move(_move);
+
             DrawEllipse();
         }
 
-        private void buttonAdd_Click(object sender, EventArgs e)
+        private async void buttonAdd_Click(object sender, EventArgs e)
         {
-            _ballContainer.Balls.Add(
-                new Ball(
-                    pictureBox1.Width / 2,
-                    pictureBox1.Height - 150));
+            Random random = new Random();
+            for (int i = 0; i < 1000; i++)
+            {
+                _ballContainer.Balls.Add(
+                    new Ball(
+                        pictureBox1.Width / 2,
+                        pictureBox1.Height - 150));
+
+                _ballContainer.Move(_move);
+
+                labelCount.Text = $"Count: {_ballContainer.Balls.Count}";
+            }
         }
 
         private void Form1_SizeChanged(object sender, EventArgs e)
         {
-            _ballContainer.Resize(pictureBox1.Width, pictureBox1.Height);
+            _move.Width = pictureBox1.Width;
+            _move.Height = pictureBox1.Height;
         }
     }
 }
